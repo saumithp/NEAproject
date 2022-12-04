@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='form-style.css') }}">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Sign in</title>
+</head>
+<body>
+
+    <div class="signupform">
+        <h1>Sign in to PCPartslist Maker</h1>
+        <form method="POST" action ="{{ url_for('form') }}" class="signup">
+            {{ form.csrf_token }}
+            {{ form.username.label }}
+            {{ form.username }}
+            <br>
+            {{ form.password.label }}
+            {{ form.password }}
+            <br>
+            <input type="submit" value="Submit" class="submit_button">
+            <br>
+            {{ message }}
+        </form>
+    </div>
+
+</body>
+</html>

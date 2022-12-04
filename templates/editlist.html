@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='list-style.css') }}">
+{#Calling the CSS sheet#}
+<head>
+    <meta charset="UTF-8">
+    <title>Edit list</title>
+</head>
+<body>
+    <div class="Parts_dropdown">
+    <form method="POST" class="parts">
+{#        {{ form.csrf_token }}#}
+{#        {{ form.cpu_field }}#}
+
+        <b>CPU:</b>
+        <SELECT name="cpu_parts">
+        {% for object in opt1 %}
+            <OPTION value="{{ object[0] }}">{{ object[0] }} £{{ object[1] }} ({{ object[2] }})</OPTION>
+        {% endfor %}
+{#        Taking object value from the function in app.py and looping to get all the values that were selected#}
+        </SELECT>
+        <br>
+        <br>
+        <b>GPU:</b>
+        <SELECT name="gpu_parts">
+        {% for object in opt2 %}
+            <OPTION value="{{ object[0] }}">{{ object[0] }} £{{ object[1] }}</OPTION>
+        {% endfor %}
+        </SELECT>
+        <br>
+        <br>
+        <b>Motherboard:</b>
+        <SELECT name="mobo_parts">
+        {% for object in opt3 %}
+            <OPTION value="{{ object[0] }}">{{ object[0] }} £{{ object[1] }} ({{ object[2] }})</OPTION>
+        {% endfor %}
+        </SELECT>
+        <br>
+        <br>
+        <b>RAM:</b>
+        <SELECT name="ram_parts">
+        {% for object in opt4 %}
+            <OPTION value="{{ object[0] }}">{{ object[0] }} £{{ object[1] }}</OPTION>
+        {% endfor %}
+
+        </SELECT>
+        <br>
+        <br>
+
+    <input type="submit" value="Update changes" class="submit_button">
+{#    This button is to update the changes in the database#}
+    </form>
+    <br>
+    <br>
+    <form method="get" action="/temp" class="list">
+            <button type="submit">Click here after you update</button>
+{#        Once you have clicked the other button, you need to click this button to save the changes and to go back#}
+{#        to your list#}
+        </form>
+    </div>
+
+
+
+
+</body>
+</html>

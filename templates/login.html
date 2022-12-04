@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='form-style.css') }}">
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+</head>
+
+<body>
+
+    <div class="signupform">
+        <h1> Login </h1>
+        <form method="POST" action ="{{ url_for('login') }}">
+            {{ form.csrf_token }}
+            {{ form.username.label }}
+            {{ form.username }}
+            <br>
+            {{ form.password.label }}
+            {{ form.password }}
+            <br>
+            <input type="submit" value="Login" class="submit_button">
+        </form>
+    </div>
+
+<h1>{{ message }}</h1>
+</body>
+
+{#    <form method="POST" action="">#}
+{#        <h2>Username</h2>#}
+{#        <input type="text" name="username">#}
+{#        <br>#}
+{#        <h2>Password</h2>#}
+{#        <input type="text" name="password">#}
+{#        <br>#}
+{#        <input type="submit" value="Login" name="Login">#}
+{#    </form>#}
+{#</body>#}
+</html>

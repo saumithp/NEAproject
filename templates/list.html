@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='list-style.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+    <div class="List">
+{#    The div is here for the CSS as this entire list is being affected by one CSS statement#}
+        <tr>
+            <b>CPU:</b>
+            {% for obj in row %}
+                <td>{{ obj[0] }}</td>
+{#                These are all rows in a table that was defined by <tr> and are outputted next to each other#}
+                <td>Cores: {{ obj[1] }}</td>
+                <td>Threads: {{ obj[2] }}</td>
+                <td>£{{ obj[3] }}</td>
+            {% endfor %}
+            <br>
+            <b>GPU:</b>
+            {% for obj2 in row2 %}
+                <td>{{ obj2[0] }}</td>
+                <td>£{{ obj2[1] }}</td>
+            {% endfor %}
+            <br>
+            <b>Motherboard:</b>
+            {% for obj3 in row3 %}
+                <td>{{ obj3[0] }}</td>
+                <td>£{{ obj3[1] }}</td>
+            {% endfor %}
+            <br>
+            <b>RAM:</b>
+            {% for obj4 in row4 %}
+                <td>{{ obj4[0] }}</td>
+                <td>£{{ obj4[1] }}</td>
+            {% endfor %}
+            <br>
+            <b>SSD:</b>
+            {% for obj5 in row5 %}
+                <td>{{ obj5[0] }}</td>
+                <td>£{{ obj5[1] }}</td>
+            {% endfor %}
+            <br>
+            <b>HDD:</b>
+            {% for obj6 in row6 %}
+                <td>{{ obj6[0] }}</td>
+                <td>£{{ obj6[1] }}</td>
+            {% endfor %}
+            <br>
+            <b>PSU:</b>
+            {% for obj7 in row7 %}
+                <td>{{ obj7[0] }}</td>
+                <td>£{{ obj7[1] }}</td>
+            {% endfor %}
+            <br>
+            <b>PCCase:</b>
+            {% for obj8 in row8 %}
+                <td>{{ obj8[0] }}</td>
+                <td>£{{ obj8[1] }}</td>
+            {% endfor %}
+    </tr>
+    <br>
+    <br>
+        <b>Your total price is:</b> £{{ total }}
+    </div>
+
+    <form method="get" action="/budget" class="return_tobudget">
+{#        The action tag here means it will take you to that url#}
+    <button type="submit">Click here to enter a new budget</button>
+    </form>
+    <br>
+    <form method="get" action="/editlist" class="edit_list">
+     <button type="submit">Click here to edit list</button>
+    </form>
+
+
+
+</body>
+</html>

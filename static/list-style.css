@@ -1,0 +1,32 @@
+/*CSS Sheet for the list output pages*/
+.List {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    font-size: large;
+}
+
+.return_tobudget {
+    border-radius: 5px;
+    text-align: center;
+}
+.edit_list {
+    border-radius: 5px;
+    text-align: center;
+}
+.Parts_dropdown {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    font-size: large;
+    border-radius: 5px;
+}
+tr {
+    table-layout: fixed;
+}
+
+.CPUInfo {
+    text-align: right;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='form-style.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <title>Budget</title>
+</head>
+<body>
+    <form method="POST" action ="{{ url_for('budget') }}" class="budget" autocomplete="off">
+        {{ form.csrf_token }}
+        {{ form.budget_input.label }}
+        {{ form.budget_input }}
+        <br>
+        <input type="submit" value="Submit" class="submit_button">
+        <br>
+        {{ message }}
+    </form>
+
+</body>
+</html>
